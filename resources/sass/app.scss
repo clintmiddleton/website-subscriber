@@ -1,0 +1,81 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+$dark: #024867;
+$light: #02a4ec;
+
+body {
+    background: radial-gradient($dark,#020024);
+}
+
+@mixin card-header($font-size: false) {
+    background-color: $dark;
+    color: $white;
+    
+    @if $font-size {
+        @if $font-size >= 1 {
+            font-size: 1.2em;
+        }
+    }
+}
+
+.navbar {
+    background-color: $dark;
+    .navbar-brand {
+        color: $white;
+        font-weight: 500;
+    }
+    .nav-link {
+        color: $white;
+    }
+}
+
+.card {
+    .card-header {
+        @include card-header;
+    }
+    .card-title {
+        font-weight: 400;
+    }
+}
+
+#dashboard {
+    .card-header {
+        @include card-header(2);
+    }
+}
+
+a {
+    color: $light;
+}
+
+.btn-primary {
+    background-color: $light;
+    color: $white;
+    border-color: $light;
+}
+
+.btn-outline-primary {
+    background-color: $white;
+    color: $light;
+    border-color: $light;
+}
+
+.page-item {
+    .page-link {
+        color: $light;
+    }
+    &.active {
+        .page-link {
+            background: $light;
+            border-color: $light;
+            color: #FFF;
+        }
+    }
+}
